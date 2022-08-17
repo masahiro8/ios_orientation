@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>iOS orientation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="list">
+      <div>window.orientation: <span id="orientation"></span></div>
+      <div>window.innerWidth: <span id="innerWidth"></span></div>
+      <div>window.innerHeight: <span id="innerHeight"></span></div>
+    </div>
+    <script>
+      window.addEventListener('resize', () => {
+        console.log('resize');
+        document.getElementById('innerWidth').innerText = window.innerWidth;
+        document.getElementById('innerHeight').innerText = window.innerHeight;
+      });
+      window.addEventListener('orientationchange', () => {
+        console.log('orientationchange');
+        document.getElementById('orientation').innerText = window.orientation;
+      });
+    </script>
+    <style>
+      .list {
+        font-size: 32px;
+      }
+    </style>
+  </body>
+</html>
