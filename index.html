@@ -12,17 +12,20 @@
     </div>
     <script>
       const update = (v) => {
+        document.getElementById('orientation').innerText = window.orientation;
         document.getElementById('innerWidth').innerText = window.innerWidth;
         document.getElementById('innerHeight').innerText = window.innerHeight;
         document.getElementById('status').innerText = v;
       };
       window.addEventListener('resize', () => {
         console.log('resize');
-        update('update');
+        update('resize');
       });
       window.addEventListener('orientationchange', () => {
         console.log('orientationchange');
-        update('orientationchange');
+        setTimeout(() => {
+          update('orientationchange');
+        }, 1000);
       });
     </script>
     <style>
