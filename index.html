@@ -12,18 +12,18 @@
       <div>resize:<span id="resize"></span></div>
     </div>
     <script>
-      let or = 0;
-      let re = 0;
       window.addEventListener('resize', () => {
         console.log('resize');
         document.getElementById('innerWidth').innerText = window.innerWidth;
         document.getElementById('innerHeight').innerText = window.innerHeight;
-        document.getElementById('resize').innerText = re++;
+        document.getElementById('resize').innerText = 'resized';
+        document.getElementById('orientationchange').innerText = '';
       });
       window.addEventListener('orientationchange', () => {
         console.log('orientationchange');
         document.getElementById('orientation').innerText = window.orientation;
-        document.getElementById('orientationchange').innerText = or++;
+        document.getElementById('resize').innerText = '';
+        document.getElementById('orientationchange').innerText = 'orientation';
       });
     </script>
     <style>
