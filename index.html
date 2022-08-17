@@ -8,16 +8,22 @@
       <div>window.orientation: <span id="orientation"></span></div>
       <div>window.innerWidth: <span id="innerWidth"></span></div>
       <div>window.innerHeight: <span id="innerHeight"></span></div>
+      <div>orientationchange:<span id="orientationchange"></span></div>
+      <div>resize:<span id="resize"></span></div>
     </div>
     <script>
+      let or = 0;
+      let re = 0;
       window.addEventListener('resize', () => {
         console.log('resize');
         document.getElementById('innerWidth').innerText = window.innerWidth;
         document.getElementById('innerHeight').innerText = window.innerHeight;
+        document.getElementById('resize').innerText = re++;
       });
       window.addEventListener('orientationchange', () => {
         console.log('orientationchange');
         document.getElementById('orientation').innerText = window.orientation;
+        document.getElementById('orientationchange').innerText = or++;
       });
     </script>
     <style>
